@@ -27,6 +27,7 @@ bindkey '^[v' vimopen
 alias szh='source ~/.zshrc'
 alias vimz='nvim ~/.zshrc'
 alias vimi='nvim ~/.config/i3/config'
+alias vimk='nvim ~/.config/kitty/kitty.conf'
 alias vimf='nvim $(fzf)'
 
 alias dex='docker exec -it'
