@@ -1,10 +1,10 @@
-export PATH=$PATH:$HOME/go/bin
-export EDITOR=vim
-
+export ZSH_THEME="powerlevel10k/powerlevel10k"
 export ZSH=$HOME/.oh-my-zsh
 plugins=(zsh-autosuggestions zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
-eval "$(starship init zsh)"
+
+export PATH=$PATH:$HOME/go/bin
+export EDITOR=nvim
 
 source /usr/share/doc/fzf/examples/completion.zsh
 source /usr/share/doc/fzf/examples/key-bindings.zsh
@@ -12,7 +12,7 @@ export FZF_DEFAULT_OPTS='--height 80% --layout=reverse --border'
 export FZF_DEFAULT_COMMAND="find -type f"
 
 sd() {
-  export FZF_DEFAULT_COMMAND="find $HOME/projects -maxdepth 2 -type d"
+  export FZF_DEFAULT_COMMAND="find $HOME/projects -maxdepth 3 -type d"
   cd $(fzf)
   ls
   export FZF_DEFAULT_COMMAND="find -type f"

@@ -1,10 +1,10 @@
-sudo apt install neovim nodejs npm golang i3 fzf tmux picom nitrogen ripgrep stow curl clang neofetch zsh git;
+sudo apt install neovim nodejs npm golang i3 fzf tmux picom nitrogen ripgrep stow curl clang neofetch zsh git kitty;
 
 git clone https://github.com/nurtai325/dotfiles $HOME;
 cd $HOME/dotfiles;
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)";
-curl -sS https://starship.rs/install.sh | sh;
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 sudo chsh -s $(which zsh)
 rm -rf ~/.zshrc;
 stow zsh;
