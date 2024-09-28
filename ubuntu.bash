@@ -11,6 +11,10 @@ stow zsh;
 
 stow nvim;
 
+stow scripts;
+
+stow p10k;
+
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm;
 stow tmux;
 

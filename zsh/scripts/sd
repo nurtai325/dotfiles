@@ -1,0 +1,16 @@
+#!/bin/bash
+
+session=$(find $HOME/projects -maxdepth 2 -type d | fzf);
+
+if [ $? -eq 0 ]; then
+    session_name=$(basename $session | tr . _);
+
+    if ! tmux has-session -t $session_name 2> /dev/null; then
+        tmux start-server;
+        tmux new-session -c $session -s $session_name -d;
+    fi
+
+    if ! tmux switch-client -t $session_name; then
+        tmux attach-session -t $session_name;
+    fi
+fi

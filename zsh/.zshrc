@@ -2,7 +2,7 @@
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+    source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
 export ZSH_THEME="powerlevel10k/powerlevel10k"
@@ -10,26 +10,29 @@ export ZSH=$HOME/.oh-my-zsh
 plugins=(zsh-autosuggestions zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 
-export PATH=$PATH:$HOME/go/bin
+export PATH=$PATH:$HOME/go/bin:$HOME/scripts
 export EDITOR=nvim
 
 source /usr/share/doc/fzf/examples/completion.zsh
 source /usr/share/doc/fzf/examples/key-bindings.zsh
 export FZF_DEFAULT_OPTS='--height 80% --layout=reverse --border'
-export FZF_DEFAULT_COMMAND="find -type f"
-
-sd() {
-  export FZF_DEFAULT_COMMAND="find $HOME/projects -maxdepth 3 -type d"
-  cd $(fzf)
-  ls
-  export FZF_DEFAULT_COMMAND="find -type f"
-}
+export FZF_DEFAULT_COMMAND="find . -type f"
 
 vimopen() {
-  nvim .
+    nvim .
 }
 zle -N vimopen{,}
 bindkey '^[v' vimopen
+
+search_d() {
+    sd
+}
+zle -N search_d{,}
+bindkey '^f' search_d
+
+cpl() {
+    fc -ln -1 | xsel --clipboard
+}
 
 alias szh='source ~/.zshrc'
 alias vimz='nvim ~/.zshrc'
@@ -37,7 +40,6 @@ alias vimi='nvim ~/.config/i3/config'
 alias vimk='nvim ~/.config/kitty/kitty.conf'
 alias vimf='nvim $(fzf)'
 
-alias dex='docker exec -it'
 alias dcu='docker compose up -d'
 alias dcd='docker compose down -v'
 
