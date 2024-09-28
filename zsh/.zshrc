@@ -16,23 +16,13 @@ export EDITOR=nvim
 source /usr/share/doc/fzf/examples/completion.zsh
 source /usr/share/doc/fzf/examples/key-bindings.zsh
 export FZF_DEFAULT_OPTS='--height 80% --layout=reverse --border'
-export FZF_DEFAULT_COMMAND="find . -type f"
+export FZF_DEFAULT_COMMAND="rg --files"
 
 vimopen() {
     nvim .;
 }
 zle -N vimopen{,}
 bindkey '^[v' vimopen
-
-vimg() {
-    export FZF_DEFAULT_COMMAND="git ls-files";
-    nvim $(fzf);
-}
-
-vimf() {
-    export FZF_DEFAULT_COMMAND="find . -type f";
-    nvim $(fzf);
-}
 
 cpl() {
     fc -ln -1 | xsel --clipboard;
@@ -42,6 +32,7 @@ alias szh='source ~/.zshrc'
 alias vimz='nvim ~/.zshrc'
 alias vimi='nvim ~/.config/i3/config'
 alias vimk='nvim ~/.config/kitty/kitty.conf'
+alias vimf='nvim $(fzf)'
 
 alias dcu='docker compose up -d'
 alias dcd='docker compose down -v'
