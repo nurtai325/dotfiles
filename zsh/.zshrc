@@ -30,6 +30,16 @@ search_d() {
 zle -N search_d{,}
 bindkey '^f' search_d
 
+vimg() {
+    export FZF_DEFAULT_COMMAND="git ls-files";
+    nvim $(fzf);
+}
+
+vimf() {
+    export FZF_DEFAULT_COMMAND="find . -type f";
+    nvim $(fzf);
+}
+
 cpl() {
     fc -ln -1 | xsel --clipboard
 }
@@ -38,7 +48,6 @@ alias szh='source ~/.zshrc'
 alias vimz='nvim ~/.zshrc'
 alias vimi='nvim ~/.config/i3/config'
 alias vimk='nvim ~/.config/kitty/kitty.conf'
-alias vimf='nvim $(fzf)'
 
 alias dcu='docker compose up -d'
 alias dcd='docker compose down -v'
