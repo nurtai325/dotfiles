@@ -19,16 +19,10 @@ export FZF_DEFAULT_OPTS='--height 80% --layout=reverse --border'
 export FZF_DEFAULT_COMMAND="find . -type f"
 
 vimopen() {
-    nvim .
+    nvim .;
 }
 zle -N vimopen{,}
 bindkey '^[v' vimopen
-
-search_d() {
-    sd
-}
-zle -N search_d{,}
-bindkey '^f' search_d
 
 vimg() {
     export FZF_DEFAULT_COMMAND="git ls-files";
@@ -41,7 +35,7 @@ vimf() {
 }
 
 cpl() {
-    fc -ln -1 | xsel --clipboard
+    fc -ln -1 | xsel --clipboard;
 }
 
 alias szh='source ~/.zshrc'
