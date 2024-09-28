@@ -12,6 +12,7 @@ stow zsh;
 stow nvim;
 
 stow scripts;
+chmod -R +x $HOME/scripts
 
 stow p10k;
 
