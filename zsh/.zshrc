@@ -24,10 +24,6 @@ vimopen() {
 zle -N vimopen{,}
 bindkey '^[v' vimopen
 
-cpl() {
-    fc -ln -1 | xsel --clipboard;
-}
-
 alias szh='source ~/.zshrc'
 alias vimz='nvim ~/.zshrc'
 alias vimi='nvim ~/.config/i3/config'
