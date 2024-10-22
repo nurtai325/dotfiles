@@ -47,7 +47,7 @@ wireless _first_ {
 }
 battery all {
 #	format = "%status %percentage %remaining %emptytime"
-        format = " %status %percentage"
+    format = " %status %percentage"
         format_down = "No battery"
         last_full_capacity = true
         integer_battery_capacity = true
@@ -62,8 +62,8 @@ battery all {
         threshold_type = time
 }
 tztime local {
-#        format = "%Y-%m-%d %H:%M:%S"
-    format = " %d.%m. %H:%M "
+    format = "%Y-%m-%d %H:%M:%S"
+#format = " %d.%m. %H:%M "
 }
 
 # run_watch DHCP {

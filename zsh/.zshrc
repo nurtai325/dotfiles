@@ -32,6 +32,7 @@ alias vimf='nvim $(fzf)'
 
 alias dcu='docker compose up -d'
 alias dcd='docker compose down -v'
+alias batt='cat /sys/class/power_supply/macsmc-battery/capacity'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
