@@ -1,6 +1,6 @@
 #!/bin/env bash
 
-selected=$(find $HOME/temp $HOME/dotfiles $HOME/work $HOME/personal -maxdepth 1 -type d | fzf);
+selected=$(find $HOME/dotfiles $HOME/work $HOME/personal -maxdepth 1 -type d | fzf);
 
 if [ -z "$selected" ]; then
     exit 0
