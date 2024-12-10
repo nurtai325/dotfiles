@@ -9,6 +9,7 @@ vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>ve", vim.cmd.Ex)
 -- vim.keymap.set("n", "<leader>vw", vim.cmd.write)
 vim.keymap.set("n", "<leader>Q", '<cmd>wqa<cr>')  
+vim.keymap.set("n", "<leader>q", '<cmd>q!<cr>')  
 
 -- My tmux fuzy find shell script
 vim.keymap.set("n", "<leader>sd", '<cmd>!tmux new-window sd<cr>')  
