@@ -5,18 +5,24 @@ vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
 vim.g.mapleader = " "
 
+-- some bug idk
+vim.keymap.set("i", "<tab>", "    ")
+
 -- Setting :Ex and :w :q
 vim.keymap.set("n", "<leader>ve", vim.cmd.Ex)
 -- vim.keymap.set("n", "<leader>vw", vim.cmd.write)
-vim.keymap.set("n", "<leader>Q", '<cmd>wqa<cr>')  
-vim.keymap.set("n", "<leader>q", '<cmd>q!<cr>')  
+vim.keymap.set("n", "<leader>Q", '<cmd>wqa<cr>')
+vim.keymap.set("n", "<leader>q", '<cmd>q!<cr>')
 
--- My tmux fuzy find shell script
-vim.keymap.set("n", "<leader>sd", '<cmd>!tmux new-window sd<cr>')  
+-- Tmux fuzy find shell script
+vim.keymap.set("n", "<leader>sd", '<cmd>!tmux new-window sd<cr>')
 
 -- Copying to system register
 vim.keymap.set("n", "<leader>y", '"+y')
 vim.keymap.set("v", "<leader>y", '"+y')
+
+-- move left not leaving insert mode
+vim.keymap.set("i", "<C-i>", "<Right>")
 
 -- -- Capitalize
 -- vim.keymap.set("n", "~", '_~')
@@ -48,7 +54,7 @@ vim.keymap.set("n", "<C-l>", "<C-w><C-l>", { desc = "Move focus to the right win
 vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower window" })
 vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
 
-vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv") 
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 
 vim.keymap.set("n", "n", "nzzzv")
