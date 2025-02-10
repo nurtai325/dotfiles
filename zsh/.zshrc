@@ -10,13 +10,18 @@ export ZSH=$HOME/.oh-my-zsh
 plugins=(zsh-autosuggestions zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 
-export PATH=$PATH:$HOME/go/bin:$HOME/scripts
+export PATH=$PATH:$HOME/goroot/bin:$HOME/go/bin:$HOME/scripts
 export EDITOR=nvim
+export GOROOT=$HOME/goroot
 
 source /usr/share/doc/fzf/examples/completion.zsh
 source /usr/share/doc/fzf/examples/key-bindings.zsh
 export FZF_DEFAULT_OPTS='--height 80% --layout=reverse --border'
 export FZF_DEFAULT_COMMAND="rg --files"
+export GOOSE_DRIVER=postgres 
+export GOOSE_DBSTRING="postgres://alaman:alaman@localhost:5432/alaman"
+export CARGO_TARGET_DIR="$HOME/dev/cargo-target"
+export PKG_CONFIG_PATH="/usr/lib/aarch64-linux-gnu/pkgconfig"
 
 vimopen() {
     nvim .;
@@ -26,13 +31,14 @@ bindkey '^[v' vimopen
 
 alias szh='source ~/.zshrc'
 alias vimz='nvim ~/.zshrc'
-alias vimi='nvim ~/.config/i3/config'
-alias vimk='nvim ~/.config/kitty/kitty.conf'
 alias vimf='nvim $(fzf)'
-
-alias dcu='docker compose up -d'
-alias dcd='docker compose down -v'
 alias batt='cat /sys/class/power_supply/macsmc-battery/capacity'
+alias wifi='nmcli dev wifi'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+if [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]]
+then
+	exec startx
+fi
