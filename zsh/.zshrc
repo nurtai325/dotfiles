@@ -10,7 +10,7 @@ export ZSH=$HOME/.oh-my-zsh
 plugins=(zsh-autosuggestions zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 
-export PATH=$PATH:$HOME/goroot/bin:$HOME/go/bin:$HOME/scripts
+export PATH=$PATH:$HOME/goroot/bin:$HOME/go/bin:$HOME/scripts:$HOME/dev/flutter/bin
 export EDITOR=nvim
 export GOROOT=$HOME/goroot
 

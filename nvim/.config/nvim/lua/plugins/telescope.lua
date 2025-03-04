@@ -81,6 +81,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
         vim.keymap.set("n", "<leader>sc", builtin.commands, { desc = '[S]earch Recent Files ("." for repeat)' })
         vim.keymap.set("n", "<leader>sq", builtin.quickfix, { desc = '[S]earch quickfix ("." for repeat)' })
         vim.keymap.set("n", "<leader>sk", builtin.keymaps, { desc = '[S]earch quickfix ("." for repeat)' })
+        vim.keymap.set("n", "<leader>sm", builtin.man_pages, { desc = 'man pages' })
         vim.keymap.set("n", "<leader>st", function()
             builtin.grep_string({
                 search = "todo:"
