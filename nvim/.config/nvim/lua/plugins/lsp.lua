@@ -187,6 +187,7 @@ return { -- LSP Configuration & Plugins
 					},
 				},
 			},
+			rust_analyzer = {},
 		}
 
 		-- Ensure the servers and tools above are installed
