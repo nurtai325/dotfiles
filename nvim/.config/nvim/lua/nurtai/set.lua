@@ -1,4 +1,4 @@
-vim.opt.guicursor = ""
+vim.opt.guicursor = { "a:block" }
 
 -- Set tab options
 vim.opt.tabstop = 4

@@ -10,14 +10,14 @@ export ZSH=$HOME/.oh-my-zsh
 plugins=(zsh-autosuggestions zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 
-source /opt/homebrew/opt/fzf/shell/completion.zsh
-source /opt/homebrew/opt/fzf/shell/key-bindings.zsh
+source /usr/share/doc/fzf/examples/completion.zsh
+source /usr/share/doc/fzf/examples/completion.zsh
 export FZF_DEFAULT_OPTS='--height 80% --layout=reverse --border'
 export FZF_DEFAULT_COMMAND="rg --files"
 
 export PATH=$PATH:$HOME/go/bin:$HOME/scripts
+export JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64
 export EDITOR=nvim
-export GOPRIVATE=gitlab.owlidar.com/owl/*
 
 vimopen() {
     nvim .;
@@ -26,6 +26,7 @@ zle -N vimopen{,}
 bindkey '^[v' vimopen
 
 alias szh='source ~/.zshrc'
+alias vim='nvim'
 alias vimz='nvim ~/.zshrc'
 alias vimf='nvim $(fzf)'
 
