@@ -86,7 +86,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
 		vim.keymap.set("n", "<leader>sm", builtin.man_pages, { desc = 'man pages' })
 		vim.keymap.set("n", "<leader>st", function()
 			builtin.grep_string({
-				search = "todo:"
+				search = "todo"
 			})
 		end, { desc = "[S]earch todos" })
 
